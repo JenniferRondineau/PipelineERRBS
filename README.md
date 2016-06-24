@@ -33,8 +33,8 @@ Jennifer Rondineau, bioinformatics student (M2) wrote this code.
 
 # See also
 
-Samtools website <http://samtools.sourceforge.net>
-Trim_galore website <http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/>
-Fastqc website <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>
-Bismark website <http://www.bioinformatics.babraham.ac.uk/projects/bismark/>
-Bowtie2 website <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>
+Samtools website <http://samtools.sourceforge.net> <br/>
+Trim_galore website <http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/><br/>
+Fastqc website <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/><br/>
+Bismark website <http://www.bioinformatics.babraham.ac.uk/projects/bismark/><br/>
+Bowtie2 website <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml><br/>
