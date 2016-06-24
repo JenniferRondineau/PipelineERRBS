@@ -1,0 +1,6 @@
+Trim_galore
+Cutadapt
+Samtools
+bismark
+bowtie2
+fastqc
