@@ -12,6 +12,9 @@ PipelineERRBS requires :
 	- Bismark
 	- Bowtie2
 	- Fastqc
+	- methylKit
+	- edmr
+	- HOMER
 
 # Download 
 
@@ -33,8 +36,12 @@ Jennifer Rondineau, bioinformatics student (M2) wrote this code.
 
 # See also
 
-Samtools website <http://samtools.sourceforge.net> 
-Trim_galore website <http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/>
-Fastqc website <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>
-Bismark website <http://www.bioinformatics.babraham.ac.uk/projects/bismark/>
-Bowtie2 website <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>
+Samtools website <http://samtools.sourceforge.net> <\br>
+Trim_galore website <http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/><\br>
+Fastqc website <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/><\br>
+Bismark website <http://www.bioinformatics.babraham.ac.uk/projects/bismark/><\br>
+Bowtie2 website <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml><\br>
+methylKit website <https://github.com/al2na/methylKit><\br>
+eDMR website <https://github.com/ShengLi/edmr><\br>
+HOMER website <http://homer.salk.edu/homer/><\br>
+
