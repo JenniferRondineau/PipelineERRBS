@@ -14,8 +14,10 @@ import sys
 import getopt
 from ERRBSalign import *
 from usage import *
-
-__all__ = ['main']
+from methylDiffbyPatient import *
+from methylDiffbyGroup import *
+from extractionCpG import *
+from annotateDMR import *
 
 def main():
 	__version__ = "0.0.1"  # version of PipelineERRBS
@@ -25,6 +27,17 @@ def main():
 	if sys.argv[1] == 'ERRBSalign':
 		mainERRBSalign(sys.argv[1:])
 
-if __name__ == "__main__":
-    main()
+	elif sys.argv[1] == 'methylDiffbyPatient':
+		methylDiffbyPatient(sys.argv[1:])
+
+	elif sys.argv[1] == 'extractionCpG':
+		ExtractionCpG(sys.argv[1:])
+
+	elif sys.argv[1] == 'annotateDMR':
+		annotateDMR(sys.argv[1:])
+
+	else :
+		usagePipeline()
+		sys.exit(2)
+
 

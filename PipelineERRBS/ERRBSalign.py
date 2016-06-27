@@ -56,16 +56,16 @@ def mainERRBSalign(argv):
 			single = 'True'
 			checkFile(arg)
 			inputfileR1 = arg
-		elif opt in ("-g","--genome_ref"): # Reference genome directory is specified
+		elif opt in ("-g","--genome_ref"): # Reference genome directory
 			genomeref = arg
-		elif opt in ("-o", "--outputdir"): # Output directory is specified
+		elif opt in ("-o", "--outputdir"): # Output directory
 			outputdir = arg
 		elif opt == '--version': # print software version
 			print "ERRBSalign."+__version__
 			sys.exit(0)
 
 	# Check that all necessary arguments are given
-	checkargs(paired,inputfileR1,inputfileR2,genomeref,outputdir)
+	checkargsAlign(paired,inputfileR1,inputfileR2,genomeref,outputdir)
 	# Adapter filtering
 	paired, single, R1, R2,outputdir = filtering(paired, single, inputfileR1, inputfileR2, outputdir)
 	# Check that the given genome path exists and if the genome is already indexing or not

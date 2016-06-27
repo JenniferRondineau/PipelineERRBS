@@ -4,3 +4,6 @@ Samtools
 bismark
 bowtie2
 fastqc
+R >= 3.4.0
+methylKit
+eDMR

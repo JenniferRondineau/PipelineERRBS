@@ -23,5 +23,7 @@ setup(
 		'PipelineERRBS = PipelineERRBS.PipelineERRBS:main',
 		],
 	},
+	package_data={'': ['*.r', '*.R']},
+	include_package_data=True
 
 )
