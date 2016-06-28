@@ -76,14 +76,14 @@ Jennifer Rondineau, bioinformatics student (M2) wrote this code.
  
 # See also
 
-Samtools website <http://samtools.sourceforge.net> <\br>
-Trim_galore website <http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/><\br>
-Fastqc website <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/><\br>
-Bismark website <http://www.bioinformatics.babraham.ac.uk/projects/bismark/><\br>
-Bowtie2 website <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml><\br>
-methylKit website <https://github.com/al2na/methylKit><\br>
-eDMR website <https://github.com/ShengLi/edmr><\br>
-HOMER website <http://homer.salk.edu/homer/><\br>
+Samtools website <http://samtools.sourceforge.net> <br>
+Trim_galore website <http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/><br>
+Fastqc website <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/><br>
+Bismark website <http://www.bioinformatics.babraham.ac.uk/projects/bismark/><br>
+Bowtie2 website <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml><br>
+methylKit website <https://github.com/al2na/methylKit><br>
+eDMR website <https://github.com/ShengLi/edmr><br>
+HOMER website <http://homer.salk.edu/homer/><br>
 
 # Contact & Questions
 If you have any questions : <jennifer.rondineau@etu.univ-nantes.fr>
