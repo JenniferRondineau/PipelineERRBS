@@ -12,6 +12,7 @@
 import subprocess
 import os
 
+#Function to extract differentially methylated cytosine (DMC) and differentially methylated regions (DMR)
 def extractionDMCDMR(control,case, outputdir,name):
 
 	split = os.path.splitext(control)
@@ -22,36 +23,12 @@ def extractionDMCDMR(control,case, outputdir,name):
 	extension = split[1]
 	if not extension == '.txt':
 		case = split[0] +"_CpG.txt"	
-	command = "Rscript /home/stage/Bureau/PipelineERRBS/PipelineERRBS/scriptR/extraction_DMC_DMR.R " + control + " " + case + " " + outputdir + " "+ name
+
+	# Obtaining the path where the script is located
+	path=os.popen("echo $PipelineERRBSdata_PATH").read()
+
+	command = "Rscript $PipelineERRBS_PATH/extraction_DMC_DMR.R " + control + " " + case + " " + outputdir + " "+ name + " "+ path
 	subprocess.call(command, shell=True) 
 
 
-
-def extractionDMCDMRGroup(control,case, outputdir,name):
-	listfilecontrol = str()
-	listtreatment = str()
-	listID = str()
-	listfile = str()
-	controlfile = open(control,"r")
-	for line in controlfile:
-		listfilecontrol += line.rstrip('\n') +  ","
-		listID += (os.path.basename(line.rstrip('\n'))).rstrip('_CpG.txt')+ ","
-		listtreatment += "0,"
-	controlfile.close()
-	print listfilecontrol
-
-	listfilecase = str()
-	controlcase = open(case,"r")
-	for line in controlcase:
-		listfilecase += line.rstrip('\n') +  ","
-		listID += (os.path.basename(line.rstrip('\n'))).rstrip('_CpG.txt')+ ","
-		listtreatment += "1,"
-	controlcase.close()
-	listfile += listfilecontrol + listfilecase[:-1]
-	print listtreatment[:-1]
-	print listID[:-1]
-
-
-	command = "Rscript /home/stage/Bureau/PipelineERRBS/PipelineERRBS/scriptR/extraction_DMC_DMR.R " + listfile + " "  + outputdir + " "+ name +" "+ listID[:-1] +" "+ listtreatment[:-1]
-	subprocess.call(command, shell=True) 
 

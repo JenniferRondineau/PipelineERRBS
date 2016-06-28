@@ -14,7 +14,7 @@ setup(
 	author='Jennifer Rondineau',
 	author_email='jennifer.rondineau@etu.univ-nantes.fr',
 	url="mettre github",
-	#install_requires = ["Samtools", "bowtie2", "bismark","trim_galore","cutadapt"],
+	#install_requires = ["Samtools", "bowtie2", "bismark","trim_galore","cutadapt", "fastqc","R", "methylKit", "eDMR"],
 	classifiers=[
 		"Programming Language :: Python"
 	],
@@ -27,3 +27,5 @@ setup(
 	include_package_data=True
 
 )
+
+

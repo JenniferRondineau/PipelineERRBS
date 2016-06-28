@@ -63,12 +63,14 @@ def checkargsMethylDiff(control,case,outputdir,name):
 		print "Error, a name is required ..."
 		sys.exit(1)
 
+# Check whether the file has an ".sam" extension and if so, extraction of CpGs.
 def checkCpG(file_in, outputdir):
 	split = os.path.splitext(file_in)
 	extension = split[1]
 	if (extension == '.sam' or extension == '.SAM'):
 		extractionCpG(file_in, outputdir)
 
+# Check whether the file has an ".txt" extension
 def checkCpGfile(file_in):
 	split = os.path.splitext(file_in)
 	extension = split[1]

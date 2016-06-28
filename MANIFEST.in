@@ -1,3 +1,4 @@
 include *.md
 include *.txt
 include /PipelineERRBS/scriptR/*
+include PipelineERREBS/data/*.txt

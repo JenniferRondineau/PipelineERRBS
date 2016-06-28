@@ -15,15 +15,17 @@ import getopt
 from ERRBSalign import *
 from usage import *
 from methylDiffbyPatient import *
-from methylDiffbyGroup import *
 from extractionCpG import *
 from annotateDMR import *
 
 def main():
 	__version__ = "0.0.1"  # version of PipelineERRBS
+
+	# if any arguments are given print usage message and then exit the programm
 	if len(sys.argv) == 1: 
 		usagePipeline()
 		sys.exit(2)
+	
 	if sys.argv[1] == 'ERRBSalign':
 		mainERRBSalign(sys.argv[1:])
 
