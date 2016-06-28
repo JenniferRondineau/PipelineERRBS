@@ -74,7 +74,7 @@ PipelineERRBS annotateDMR -b <BEDFILE> -s <FILE> --go <output directory> -o <OUT
 
 Jennifer Rondineau, bioinformatics student (M2) wrote this code.
 
-###### See also
+###### See also :
 Samtools website <http://samtools.sourceforge.net> <br>
 Trim_galore website <http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/><br>
 Fastqc website <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/><br>
