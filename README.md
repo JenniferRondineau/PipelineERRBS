@@ -1,19 +1,21 @@
-# PipelineERRBS
+*** PipelineERRBS ***
+*********************
+
+# Description
 
 PipelineERRBS is a software allowing to analyse ERRBS data :
-	- filtering data, 
-	- alignement, 
+
+	- filtering data,
+	- alignement,
 	- extraction of CpGs,
-	- analysis of differential methylation events, 
+	- analysis of differential methylation events,
 	- annotation of differential methylation events.
 
-PipelineERRBS is designed only to analyze non-directional bisulfite sequencing. Furthermore, differential methylation analysis is only possible between a control file and a case file. An R script is available (/PipelineERRBS/scriptR/methylDiffbyGroup.R), for the analysis of a control group versus a case group (see documentation)
+PipelineERRBS is designed only to analyze non-directional bisulfite sequencing. Furthermore, differential methylation analysis is only possible between a control file and a case file. An R script is available (/PipelineERRBS/scriptR/methylDiffbyGroup.R), for the analysis of a control group versus a case group.
 
-This program is under development. 
+# Requirements
 
-# Requirements 
-
-PipelineERRBS requires : 
+PipelineERRBS requires :
 
 	- Trim_galore
 	- Cutadapt
@@ -25,20 +27,20 @@ PipelineERRBS requires :
 	- edmr
 	- HOMER
 
-# Download 
+# Download
 
 ```shell
 $ git clone "https://github.com/JenniferRondineau/PipelineERRBS.git"
 ```
 
-# Installation 
+# Installation
 
 ```shell
 $ cd PipelineERRBS
 $ python setup.py install
 ```
 
-Add in your bashrc file: 
+Add in your bashrc file:
 ```shell
 export PipelineERRBS_PATH=<PATH>/PipelineERRBS/PipelineERRBS/scriptR
 export PipelineERRBSdata_PATH=<PATH>/PipelineERRBS/PipelineERRBS/data
@@ -55,7 +57,7 @@ single-end read: PipelineERRBS ERRBSalign --single <fastq> -g <genomefolder> -o 
 Step 2. Extraction of CpGs
 
 ```shell
-PipelineERRBS extractionCpG -f <SAM FILE> -o <outputdir> 
+PipelineERRBS extractionCpG -f <SAM FILE> -o <outputdir>
 ```
 
 Step 3. Differential methylation analysis between a control file and a case file
@@ -65,9 +67,23 @@ PipelineERRBS methylDiffbyPatient --control <sam> OR <_CpG.txt> --case <sam> OR 
 ```
 
 Step 4. Annotation of differentially methylation regions and GO ontology analysis
+
 ```shell
 PipelineERRBS annotateDMR -b <BEDFILE> -s <FILE> --go <output directory> -o <OUTPUTFILE>
 ```
+
+Additional option :  Differential methylation analysis between a control group and a case group
+If you want to compare methylation profile of two groups, a R script is available in this package (PipelineERRBS/scriptR/methylDiffbyGroup.R). It suffices to add path of your files '\_CpG.txt' in the R script (see example in the R script), and then
+```shell
+Rscript $PipelineERRBS_PATH/methylDiffbyGroup.R
+```
+
+# Reference sequences
+
+The annotation files (/PipelineERRBS/data/) refseq.hg19 and cpgi.hg19 come from UCSC Genome Browser (https://genome.ucsc.edu/).
+
+The "all_enhancers" file was created by combining enhancers described by the ENCODE projet (https://sites.google.com/site/anshulkundaje/projects/epigenomeroadmap) and FANTOM (http://enhancer.binf.ku.dk/presets/), these data are derived from more than 100 different cell lines.
+
 
 
 # Authors
@@ -86,3 +102,4 @@ HOMER website <http://homer.salk.edu/homer/><br>
 
 # Contact & Questions
 If you have any questions : <jennifer.rondineau@etu.univ-nantes.fr>
+
