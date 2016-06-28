@@ -1,4 +1,5 @@
-*** PipelineERRBS ***
+*********************
+# PipelineERRBS
 *********************
 
 # Description
