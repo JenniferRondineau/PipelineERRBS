@@ -75,11 +75,11 @@ PipelineERRBS annotate -b <BEDFILE> -s <FILE> --go <output directory> -o <OUTPUT
 
 Additional option :  
 
-1. Differential methylation analysis between a control group and a case group : If you want to compare methylation profile of two groups, a R script is available in this package (PipelineERRBS/scriptR/methylDiffbyGroup.R). It suffices to add path of your files '\_CpG.txt' in the R script (see example in the R script), and then
+1) Differential methylation analysis between a control group and a case group : If you want to compare methylation profile of two groups, a R script is available in this package (PipelineERRBS/scriptR/methylDiffbyGroup.R). It suffices to add path of your files '\_CpG.txt' in the R script (see example in the R script), and then
 ```shell
 Rscript $PipelineERRBS_PATH/methylDiffbyGroup.R
 ```
-1. Option : coveredCpG, allows to obtain a bed file containing all CpGs sequenced in case and control file
+2) Option : coveredCpG, allows to obtain a bed file containing all CpGs sequenced in case and control file
 ```shell
 PipelineERRBS coveredCpG --control <_CpG.txt> --case  <_CpG.txt> --name <str> -o <outputdir>
 ```
