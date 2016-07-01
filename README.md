@@ -79,7 +79,7 @@ Additional option :
 ```shell
 Rscript $PipelineERRBS_PATH/methylDiffbyGroup.R
 ```
-2. Option : coveredCpG, allows to obtain a bed file containing all CpGs sequenced in case and control file
+1. Option : coveredCpG, allows to obtain a bed file containing all CpGs sequenced in case and control file
 ```shell
 PipelineERRBS coveredCpG --control <_CpG.txt> --case  <_CpG.txt> --name <str> -o <outputdir>
 ```
