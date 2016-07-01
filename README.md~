@@ -1,4 +1,3 @@
-*********************
 # PipelineERRBS
 *********************
 
@@ -51,8 +50,8 @@ export PipelineERRBSdata_PATH=<PATH>/PipelineERRBS/PipelineERRBS/data
 Step 1. Data filtering and alignment of reads
 
 ```shell
-paired-end read: PipelineERRBS align --paired -1 <fastqR1> -2 <fastqR2> -g <genomefolder>  -o <outputdir>
-single-end read: PipelineERRBS align --single <fastq> -g <genomefolder> -o <outputdir>
+paired-end read: PipelineERRBS ERRBSalign --paired -1 <fastqR1> -2 <fastqR2> -g <genomefolder>  -o <outputdir>
+single-end read: PipelineERRBS ERRBSalign --single <fastq> -g <genomefolder> -o <outputdir>
 ```
 
 Step 2. Extraction of CpGs
@@ -70,18 +69,13 @@ PipelineERRBS methylDiffbyPatient --control <sam> OR <_CpG.txt> --case <sam> OR 
 Step 4. Annotation of differentially methylation regions and GO ontology analysis
 
 ```shell
-PipelineERRBS annotate -b <BEDFILE> -s <FILE> --go <output directory> -o <OUTPUTFILE>
+PipelineERRBS annotateDMR -b <BEDFILE> -s <FILE> --go <output directory> -o <OUTPUTFILE>
 ```
 
-Additional option :  
-
-1. Differential methylation analysis between a control group and a case group : If you want to compare methylation profile of two groups, a R script is available in this package (PipelineERRBS/scriptR/methylDiffbyGroup.R). It suffices to add path of your files '\_CpG.txt' in the R script (see example in the R script), and then
+Additional option :  Differential methylation analysis between a control group and a case group
+If you want to compare methylation profile of two groups, a R script is available in this package (PipelineERRBS/scriptR/methylDiffbyGroup.R). It suffices to add path of your files '\_CpG.txt' in the R script (see example in the R script), and then
 ```shell
 Rscript $PipelineERRBS_PATH/methylDiffbyGroup.R
-```
-2. Option : coveredCpG, allows to obtain a bed file containing all CpGs sequenced in case and control file
-```shell
-PipelineERRBS coveredCpG --control <_CpG.txt> --case  <_CpG.txt> --name <str> -o <outputdir>
 ```
 
 # Reference sequences
@@ -108,3 +102,4 @@ HOMER website <http://homer.salk.edu/homer/><br>
 
 # Contact & Questions
 If you have any questions : <jennifer.rondineau@etu.univ-nantes.fr>
+
