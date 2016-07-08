@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#
-# ERRBS DNA methylation analysis pipeline 
-#
+# ERRBS DNA methylation analysis pipeline
 # Author: Jennifer Rondineau
 # Date: Jun 24, 2016
-#
-# 
 
 import os
 import sys
@@ -21,7 +17,7 @@ def extractionCpG(file_in, outputdir):
 	name = os.path.basename(file_in)
 	idSample = os.path.splitext(name)
 	command = "Rscript $PipelineERRBS_PATH/controle_qualite_methylkit.R " + file_in + " " + outputdir + " "+ idSample[0]
-	subprocess.call(command, shell=True) 
+	subprocess.call(command, shell=True)
 
 
 def ExtractionCpG(argv):
@@ -34,16 +30,16 @@ def ExtractionCpG(argv):
 	outputdir = str()
 
 	# List of all options possible
-	try:	   
+	try:
 		opts, args = getopt.getopt(argv[1:],"hf:o:",["outputdir="])
 	except getopt.GetoptError:
 		usageextraction()
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h': # print usage message
-			usageextraction() 
+			usageextraction()
 			sys.exit()
-		elif opt =='-f': # sorted SAM file 
+		elif opt =='-f': # sorted SAM file
 			file_in = arg
 			if not os.path.isfile(file_in): # check if the input file does not exists
 					print "Error, the specified file '"+file_in+"' does not exists"
@@ -59,6 +55,5 @@ def ExtractionCpG(argv):
 	elif outputdir == '':
 		print "Error, output directory is required, please run extractionCpG with the option -o"
 		sys.exit(1)
-	
-	extractionCpG(file_in, outputdir)
 
+	extractionCpG(file_in, outputdir)

@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#
-# ERRBS DNA methylation analysis pipeline 
-#
+# ERRBS DNA methylation analysis pipeline
 # Author: Jennifer Rondineau
 # Date: Jun 24, 2016
-#
-# 
 
 import os
 import sys
@@ -16,13 +12,13 @@ from subprocess import Popen, PIPE
 from extractionCpG import *
 
 # Check that the given input file exists
-def checkFile(file_in): 
+def checkFile(file_in):
 	if not os.path.isfile(file_in): # if the input file does not exists, print an error message then exit the programm
 		print "Error, the specified file '"+file_in+"' does not exists"
 		sys.exit(1)
 
 # Check that all necessary arguments are given for ERRBSalign
-def checkargsAlign(paired,inputfileR1,inputfileR2,genomeref,outputdir): 
+def checkargsAlign(paired,inputfileR1,inputfileR2,genomeref,outputdir):
 	if inputfileR1 == '':
  		print "Error no options --paired (-1/-2) or --single have been used, these option are required to run this programm"
 		sys.exit(1)
@@ -49,7 +45,7 @@ def checkGenome(genomeref):
 
 
 # Check that all necessary arguments are given for methylDiffbyPatient
-def checkargsMethylDiff(control,case,outputdir,name): 
+def checkargsMethylDiff(control,case,outputdir,name):
 	if control == '':
  		print "Error, the option --control (-1) is required to run this programm, please specify a SAM control file or _CpG.txt control file"
 		sys.exit(1)
@@ -74,7 +70,5 @@ def checkCpG(file_in, outputdir):
 def checkCpGfile(file_in):
 	split = os.path.splitext(file_in)
 	extension = split[1]
-	if extension != '.txt\n':	
+	if extension != '.txt\n':
 		print 'Error, ' + file_in +' need to be a "_CpG.txt" file, please run extractionCpG before'
-
-

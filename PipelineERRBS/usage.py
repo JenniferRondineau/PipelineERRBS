@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#
-# ERRBS DNA methylation analysis pipeline 
-#
+# ERRBS DNA methylation analysis pipeline
 # Author: Jennifer Rondineau
 # Date: Jun 24, 2016
-#
-# 
 
 def usageERRBSalign() :
 	print ''
@@ -37,18 +33,19 @@ def usageERRBSalign() :
 	print '\t Fastqc website <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>'
 	print '\t Bismark website <http://www.bioinformatics.babraham.ac.uk/projects/bismark/>'
 	print '\t Bowtie2 website <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>\n'
-	
-def usagePipeline() : 
+
+def usagePipeline() :
 	print ''
 	print '#######################################################################'
 	print 'PipelineERRBS : ERRBS DNA methylation analysis pipeline'
 	print '#######################################################################'
 	print ''
 	print 'OPTIONS:\n '
-	print '\t ERRBSalign'
-	print '\t extractionCpG'
-	print '\t methylDiffbyPatient'
-	print '\t annotateDMR\n'
+	print '\t align: allows filtering data and align reads against a reference genome (hg19) '
+	print '\t extractionCpG: allows the extraction of CpG '
+	print '\t methylDiffbyPatient: allows differential methylation analysis between a control file and a case file'
+	print '\t coveredCpG: allows to obtain a bed file containing all CpGs sequenced in case and control file '
+	print '\t annotate: allows annotation of DMCs and DMRs with HOMER (need to provide a bed file) \n'
 	print 'LIMITATIONS: \n'
 	print '\t Analyze only non-directional bisulfite sequencing'
 	print '\t Analysis of diffential methylation events is only possible between a control file and a case file. An R script is available (/PipelineERRBS/scriptR//home/stage/Bureau/PipelineERRBS/PipelineERRBS/scriptR/extraction_DMC_DMR.R), for the analysis of a control group versus a case group (see documentation)\n'
@@ -109,7 +106,7 @@ def usageextraction():
 def usageannotate():
 	print ''
 	print '#######################################################################'
-	print 'Annotation DMR with HOMER (annotatePeak.pl)'
+	print 'Annotation DMCs and DMRs with HOMER (annotatePeak.pl)'
 	print '#######################################################################'
 	print ''
 	print '#######################################################################\n'
@@ -117,7 +114,7 @@ def usageannotate():
 	print '\t annotateDMR -b <BEDFILE> -s <FILE> --go <output directory> -o <OUTPUTFILE>\n'
 	print 'ARGUMENTS: \n '
 	print '\t -h, --help : print the usage message'
-	print '\t -b, FILE : name of bedfile containing DMRs (chr, start, end) '
+	print '\t -b, FILE : name of bedfile (chr, start, end) '
 	print '\t -s, --annStat FILE : name of annotation statistic file '
 	print '\t --go DIR : filename of the analysis GO'
 	print '\t -o, --outputfile FILE : name of the output file\n'
@@ -126,3 +123,23 @@ def usageannotate():
 	print 'SEE ALSO:\n'
 	print '\t HOMER website <http://homer.salk.edu/homer/>\n'
 
+
+def usageCoveredCpG():
+	print ''
+	print '#######################################################################'
+	print 'coveredCpG'
+	print '#######################################################################'
+	print ''
+	print 'USAGE:\n '
+	print '\t coveredCpG --control <_CpG.txt> --case <_CpG.txt> --name <str> -o <outputdir>\n'
+	print 'ARGUMENTS: \n '
+	print '\t -h, --help : print the usage message'
+	print '\t -v, --version : print the solfware version'
+	print '\t -1, --control FILE : name of the control file ( "_CpG.txt" file)'
+	print '\t -2, --case FILE : name of the case file ( "_CpG.txt" file)'
+	print '\t --name STR : an identifier to designate coverage of CpGs'
+	print '\t -o, --outputdir DIR : name of the output directory\n'
+	print 'AUTHORS:\n'
+	print '\t Jennifer Rondineau, student in bioinformatics (M2, University of Nantes) wrote this code\n'
+	print 'SEE ALSO:\n'
+	print '\t methylKit website <https://github.com/al2na/methylKit>'

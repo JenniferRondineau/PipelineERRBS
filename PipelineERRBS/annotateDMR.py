@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#
-# ERRBS DNA methylation analysis pipeline 
-#
+# ERRBS DNA methylation analysis pipeline
 # Author: Jennifer Rondineau
 # Date: Jun 24, 2016
-#
-# 
 
 import os
 import sys
@@ -21,7 +17,7 @@ def annotateDMR(argv):
 	__version__ = "0.0.1"  # version of annotateDMR
 
 	# Initialize all parameters to default values
-	bedfile = str() # input bedfile with [chr] [start] [end] Differentially methylated regions 
+	bedfile = str() # input bedfile with [chr] [start] [end] Differentially methylated regions
 	outputfile = str() # name of the output file
 	annstat = str() # name of statistic file associated with HOMER annotatePeaks.pl
 	go = str() # filename of the analysis GO
@@ -32,14 +28,14 @@ def annotateDMR(argv):
 		sys.exit(2)
 
 	# List of all options possible
-	try:	   
+	try:
 		opts, args = getopt.getopt(argv[1:],"hb:o:s:",["outputfile=", "annStats=", "go="])
 	except getopt.GetoptError:
 		usageannotate()
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h': # print usage message
-			usageannotate() 
+			usageannotate()
 			sys.exit()
 		elif opt == '-b': # input bedfile
 			checkFile(arg)
@@ -62,16 +58,13 @@ def annotateDMR(argv):
 		if go == '':
 			command = "annotatePeaks.pl " + bedfile + " hg19 > " + outputfile
 			subprocess.call(command, shell=True)
-		else : 
+		else :
 			command = "annotatePeaks.pl " + bedfile + " hg19 -go "+go+" > " + outputfile
 			subprocess.call(command, shell=True)
 	elif annstat != '':
 		if go == '':
 			command = "annotatePeaks.pl " + bedfile + " hg19 -annStats " + annstat + " > " + outputfile
 			subprocess.call(command, shell=True)
-		else : 
+		else :
 			command = "annotatePeaks.pl " + bedfile + " hg19 -annStats " + annstat + " -go "+go+" > "+ outputfile
 			subprocess.call(command, shell=True)
-		
-
-	

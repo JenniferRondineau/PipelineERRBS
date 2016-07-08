@@ -1,13 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#
-# ERRBS DNA methylation analysis pipeline 
-#
+# ERRBS DNA methylation analysis pipeline
 # Author: Jennifer Rondineau
 # Date: Jun 24, 2016
-#
-# 
+
 
 
 import subprocess
@@ -33,7 +30,7 @@ def sortAlignFile(inputfileR1, outputdir, paired, single):
 		name = os.path.basename(inputfileR1)
 		prefix = os.path.splitext(name)
 		Bamfile = outputdir +"/"+prefix[0] + "_val_1_bismark_bt2_pe.bam" # name of BAM file sorted
-		command = "samtools sort " + Bamfile + " " + outputdir +"/"+ prefix[0] +".sort" 
+		command = "samtools sort " + Bamfile + " " + outputdir +"/"+ prefix[0] +".sort"
 		print "Step 5 : Creation of a SAM file"
 		subprocess.call(command, shell=True)
 		command = "samtools view -h " + outputdir +"/"+ prefix[0] +".sort.bam > "+ outputdir +"/"+   prefix[0] +"_pe.sort.sam"
@@ -47,4 +44,3 @@ def sortAlignFile(inputfileR1, outputdir, paired, single):
 		subprocess.call(command, shell=True)
 		command = "samtools view -h " + outputdir +"/"+ prefix[0] +".sort.bam > " + outputdir +"/"+  prefix[0] +"_se.sort.sam"
 		subprocess.call(command, shell=True)
-

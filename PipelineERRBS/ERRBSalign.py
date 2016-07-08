@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#
-# ERRBS DNA methylation analysis pipeline 
-#
+# ERRBS DNA methylation analysis pipeline
 # Author: Jennifer Rondineau
 # Date: Jun 24, 2016
-#
-# 
 
 import os
 import sys
@@ -35,14 +31,14 @@ def mainERRBSalign(argv):
 		sys.exit(2)
 
 	# List of all options possible
-	try:	   
+	try:
 		opts, args = getopt.getopt(argv[1:],"h1:2:g:o:",["paired","single=","genome_ref=","outputdir=","version"])
 	except getopt.GetoptError:
 		usageERRBSalign()
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h': # print usage message
-			usageERRBSalign() 
+			usageERRBSalign()
 			sys.exit()
 		elif opt == '--paired': # paired-end read
 			paired = 'True'
@@ -75,6 +71,3 @@ def mainERRBSalign(argv):
 	# Sorting the output file BAM and creation of a SAM file
 	sortAlignFile(inputfileR1, outputdir, paired, single)
 	sys.exit(0) # Exiting
-
-
-
