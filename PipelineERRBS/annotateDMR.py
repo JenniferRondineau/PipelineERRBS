@@ -49,9 +49,9 @@ def annotateDMR(argv):
 
 	# checks that all the necessary arguments are specified
 	if bedfile == '':
-		print "Error,..."
+		print "Error, please specify an input bedfile"
 	if outputfile == '':
-		print "Error,..."
+		print "Error, please specify an output file"
 
 	# Annotation with "annotatePeak.pl" HOMER
 	if annstat == '':
